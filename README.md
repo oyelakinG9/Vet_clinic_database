@@ -13,25 +13,69 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 
 - Open SQL Shell and perform the following query operations
+SELECT * FROM animals;
+
+> BEGIN;
+
+> UPDATE animals SET species='unspecified';
+
 > SELECT * FROM animals;
-> SELECT * FROM animals WHERE date_of_birth BETWEEN '2016/01/01' AND '2019/12/31';
-> SELECT * FROM animals WHERE neutered=true AND escape_attempts < 3;
-> SELECT * FROM animals WHERE name='Agumon' OR name='Pikachu';
-> SELECT date_of_birth FROM animals WHERE name='Agumon' OR name='Pikachu';
-> SELECT name, escape_attempts FROM animals WHERE weight_kg > 10.5;
-> SELECT * FROM animals WHERE neutered=true;
-> SELECT * FROM animals WHERE name='Gabumon';
-> SELECT * FROM animals WHERE NOT name='Gabumon';
-> SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
 
-![Annotation 2022-08-10 001535-1](https://user-images.githubusercontent.com/61976324/183778464-d3488467-1450-4945-a78e-b57cdcf1449f.png)
+> ROLLBACK;
 
-![Annotation 2022-08-10 001649-2](https://user-images.githubusercontent.com/61976324/183778511-755b0688-ead4-49a8-8e4f-f9629e3e410b.png)
+> UPDATE animals SET species='digimon' WHERE name LIKE '%mon%';
 
-![Annotation 2022-08-10 001807-3](https://user-images.githubusercontent.com/61976324/183778551-64e1f084-c4e4-40d3-b9b4-a2ccb0a6308b.png)
+> SELECT * FROM animals;
+
+> UPDATE animals SET species='pokemon' WHERE species IS NULL;
+
+> BEGIN;
+
+> DELETE FROM animals;
+
+> ROLLBACK;
+
+> DELETE FROM animals WHERE date_of_birth > '2022-01-01';
+
+> BEGIN;
+
+> SAVEPOINT savepoint_01;
+
+> UPDATE animals SET weight_kg = weight_kg * -1;
+
+> ROLLBACK TO SAVEPOINT savepoint_01;
+
+> UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+
+> COMMIT;
+
+/* Also query the following operations */
+
+> SELECT COUNT(*) FROM animals;
+
+> SELECT COUNT(*) FROM animals WHERE escape_attempts = 0;
+
+> SELECT AVG(weight_kg) FROM animals;
+
+> SELECT neutered, AVG(escape_attempts) AS Avg_attempt_ascape FROM animals GROUP BY neutered;
+
+> SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species;
+
+> SELECT species, AVG(escape_attempts) FROM animals WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31' GROUP BY species;
+
+![Annotation 2022-08-10 210335-5](https://user-images.githubusercontent.com/61976324/184010808-67602530-85b2-46f0-9906-b84aece8d566.png)
 
 
-![Annotation 2022-08-10 001904-4](https://user-images.githubusercontent.com/61976324/183778625-2e38608f-9c8a-4b25-9af5-c22a304bf06e.png)
+![Annotation 2022-08-10 210532-6](https://user-images.githubusercontent.com/61976324/184011014-eb763295-ad0b-47b5-9623-9ca2610b32e5.png)
+
+![Annotation 2022-08-10 210700-7](https://user-images.githubusercontent.com/61976324/184011091-98d200d0-12a1-418c-a5c5-594ddde0f598.png)
+
+
+![Annotation 2022-08-10 210811-8](https://user-images.githubusercontent.com/61976324/184011158-8c9842f1-6674-4891-bf72-8f143fa7b9ff.png)
+
+![Annotation 2022-08-10 210910-9](https://user-images.githubusercontent.com/61976324/184011237-9c31c3b0-40b7-4bcd-a2c0-bcc4b9e92233.png)
+
+![Annotation 2022-08-10 211022-10](https://user-images.githubusercontent.com/61976324/184011328-815d859d-a465-4016-b34a-bbed6bb5a3e1.png)
 
 
 
