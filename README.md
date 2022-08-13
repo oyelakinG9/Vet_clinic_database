@@ -12,18 +12,20 @@ This repository includes files with plain SQL that can be used to recreate a dat
 - Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
 
 
-![Annotation 2022-08-13 145551-11](https://user-images.githubusercontent.com/61976324/184497662-1262b86d-4951-4427-9bd1-472370cd61b5.png)
+![Annotation 2022-08-13 163814-16](https://user-images.githubusercontent.com/61976324/184501437-44ba9196-fcbe-4368-b728-6fb66ecfef56.png)
 
 
-![Annotation 2022-08-13 145658-12](https://user-images.githubusercontent.com/61976324/184497672-03516e5e-622d-4852-91d2-2bfed6c1807c.png)
 
-![Annotation 2022-08-13 145829-13](https://user-images.githubusercontent.com/61976324/184497695-6d11c346-b903-491d-b69a-ed83c77a2e9f.png)
-
-
-![Annotation 2022-08-13 145933-14](https://user-images.githubusercontent.com/61976324/184497721-1b752ff1-b00d-48b4-9385-9cb144afb7bf.png)
+![Annotation 2022-08-13 163921-17](https://user-images.githubusercontent.com/61976324/184501462-e06b41fc-e332-4c10-b0ba-148318d6470b.png)
 
 
-![Annotation 2022-08-13 150030-15](https://user-images.githubusercontent.com/61976324/184497748-7ba350ab-a735-4e8f-a419-9311bcfce464.png)
+![Annotation 2022-08-13 164147-18](https://user-images.githubusercontent.com/61976324/184501475-10a0fd9e-0061-420e-92d7-0bba0e3104e5.png)
+
+
+![Annotation 2022-08-13 164410-19](https://user-images.githubusercontent.com/61976324/184501490-1b8d4c39-0d8e-46e9-b0e7-0e6c0a4ecda1.png)
+
+
+![Annotation 2022-08-13 164725-20](https://user-images.githubusercontent.com/61976324/184501500-153aab43-a401-44ed-8487-96503322a634.png)
 
 ## Authors
 
